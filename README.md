@@ -17,8 +17,8 @@ Depending on the selected return distribution, additional input fields are displ
 The application performs a series of calculations and provides three main outputs:
 
 - **Scenario Distribution**: A histogram showing the distribution of final amounts across all scenarios.
-- Scenario CDF: A cumulative distribution function (CDF) showing the probability of meeting or exceeding a given ending amount.
-- Monthly Investment Required: The monthly investment required to reach the desired ending amount with the specified probability.
+- **Scenario CDF**: A cumulative distribution function (CDF) showing the probability of meeting or exceeding a given ending amount.
+- **Monthly Investment Required**: The monthly investment required to reach the desired ending amount with the specified probability.
 
 ## Background Computations
 
