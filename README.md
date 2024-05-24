@@ -22,7 +22,7 @@ This [R Shiny web application](https://yannickkaelber.shinyapps.io/MonthlySaving
 
 ## Optimization Problem
 
-The underlying mathematical optimization problem aims to determine the minimum monthly savings $S$ that need to be invested to reach the final amount $A_{final}$ with a given probability of success $P_{success}$.
+The underlying mathematical optimization problem aims to determine the minimum monthly savings $S$ that need to be invested to reach the final amount $A_{final}$ with a given probability of success $P_{success}$. It solved by the bisection algorithm.
 
 $$
 \min S \quad \text{such that} \quad \Pr\left( A_{\text{end}} \geq A_{\text{final}} \right) \geq P_{\text{success}}
