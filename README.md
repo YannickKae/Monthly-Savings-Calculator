@@ -7,33 +7,30 @@
   <i>Sample Scenario Distribution of a Given Set of Input Parameters</i>
 </p>
 
-The [Monthly Savings Calculator](https://yannickkaelber.shinyapps.io/MonthlySavings/) is an interactive web application developed with R Shiny. It allows users to calculate the monthly investment required to reach a desired end amount. The calculations are based on different possible return distributions and risk profiles.
+This [R Shiny web application](https://yannickkaelber.shinyapps.io/MonthlySavings/) is designed to compute the minimum monthly savings required to reach a desired final amount of savings after a specified number of years. The app allows users to choose from different distributions for sampling monthly returns: Normal Distribution, Portfolio Distribution, and Empirical Distribution. Users can also upload their own empirical data for sampling returns.
 
 ## Features
 
-The application provides a number of user-definable input parameters:
+- Input initial amount, desired final amount, number of years, and probability of success.
+- Choose the distribution for sampling monthly returns:
+  - Normal Distribution
+  - Portfolio Distribution
+  - Empirical Distribution (with file upload)
+- Simulate monthly returns and calculate the required monthly savings.
+- Visualize the results with histograms and cumulative distribution functions (CDF).
+- Generate insightful textual output based on the calculations.
 
-- **Initial Amount**: This is the amount the user has at the beginning of the savings period.
-- **Desired End Amount**: This is the amount the user would like to have at the end of the savings period.
-- **Years**: The number of years the user wishes to save.
-- **Probability of Success**: The probability that the user will reach the desired final amount.
-- **Return Distribution**: The user has the option to select the distribution of the monthly returns. There are three options to choose from: Normal Distribution, Portfolio Distribution and Empirical Distribution.
+## Optimization Problem
 
-Depending on the selected return distribution, additional input fields are displayed. For example, if Empirical is selected, users can upload a CSV file of monthly returns.
+The underlying mathematical optimization problem aims to determine the minimum monthly savings $S$ that need to be invested to reach the final amount $A_{final}$ with a given probability of success $P_{success}$.
 
-The application performs a series of calculations and provides three main outputs:
+$$
+\min S \quad \text{such that} \quad \Pr\left( A_{\text{end}} \geq A_{\text{final}} \right) \geq P_{\text{success}}
+$$
 
-- **Scenario Distribution**: A histogram showing the distribution of final amounts across all scenarios.
-- **Scenario CDF**: A cumulative distribution function (CDF) showing the probability of meeting or exceeding a given ending amount.
-- **Monthly Investment Required**: The monthly investment required to reach the desired ending amount with the specified probability.
-
-## Background Computations
-
-A Monte Carlo simulation is used to generate many possible scenarios for monthly returns to obtain a distribution of final amounts.
-The returns can either be normally distributed, come from a portfolio distribution, or have an empirical distribution based on user-uploaded data.
-After the simulation is run, the application uses the bisection method to find the minimum monthly savings amount needed to reach the desired final amount with the specified probability.
-In this case, the interval between the minimum and maximum monthly savings amounts (defined as the desired final amount divided by the number of months) is divided until the minimum required monthly savings amount is found. This amount is the one that satisfies the condition that the final amounts equal or exceed the desired final amount with at least the desired probability.
-
-## How to use
-
-To use the application, simply enter your parameters in the form on the left and click "Calculate". The results are displayed in the right column.
+Given:
+- Initial amount $A_{initial}$
+- Desired final amount $A_{final}$
+- Number of years $N$
+- Probability of success $P_{success}$
+- Monthly return distribution $R_{monthly}$
