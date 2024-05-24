@@ -28,7 +28,6 @@ $$
 \min S \quad \text{such that} \quad \Pr\left( A_{\text{end}} \geq A_{\text{final}} \right) \geq P_{\text{success}}
 $$
 
-Given:
 - Initial amount $A_{initial}$
 - Desired final amount $A_{final}$
 - Number of years $N$
