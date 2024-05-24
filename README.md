@@ -1,5 +1,12 @@
 # Monthly Savings Calculator
 
+<p align="center">
+  <img src="Scenarios.png" style="width:100%">
+</p>
+<p align="center">
+  <i>Sample Scenario Distribution of a Given Set of Input Parameters</i>
+</p>
+
 The [Monthly Savings Calculator](https://yannickkaelber.shinyapps.io/MonthlySavings/) is an interactive web application developed with R Shiny. It allows users to calculate the monthly investment required to reach a desired end amount. The calculations are based on different possible return distributions and risk profiles.
 
 ## Features
